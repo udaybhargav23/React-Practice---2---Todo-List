@@ -99,20 +99,19 @@ function App() {
                               </button>
                            </div>
                         )}
-                        <div className="list-content">
-                           <span>{item.note}</span>
-                           <div className="actions">
-                              <button
-                                 className="editTask"
-                                 value={item.id}
-                                 onClick={HandleEditTextarea}
-                              >
-                                 Edit
-                              </button>
-                              <button value={item.id} onClick={removeItem}>
-                                 Delete
-                              </button>
-                           </div>
+
+                        {item.note}
+                        <div className="actions">
+                           <button
+                              className="editTask"
+                              value={item.id}
+                              onClick={HandleEditTextarea}
+                           >
+                              Edit
+                           </button>
+                           <button value={item.id} onClick={removeItem}>
+                              Delete
+                           </button>
                         </div>
                      </li>
                   ))}

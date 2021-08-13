@@ -67,6 +67,10 @@ ul li {
    justify-content: space-between;
 }
 
+.actions {
+   margin-top: 20px;
+}
+
 .actions button {
    margin-left: 10px;
 }
