@@ -3,7 +3,7 @@ import './../styles/App.css';
 
 function App() {
    const [note, setNote] = useState('');
-   const [editNote, setEditNote] = useState('');
+   const [editNote, setEditNote] = useState();
    const [items, setItems] = useState([]);
    const [globalId, setGlobalId] = useState(0);
    const [editId, setEditId] = useState(-1);
@@ -79,12 +79,13 @@ function App() {
                <h2>Todo Items</h2>
                <ul>
                   {items.map((item) => (
-                     <li className="list" key={item.id}>
+                     <li key={item.id}>
                         {editId == item.id && (
                            <div className="edit-item">
                               <textarea
                                  name=""
                                  id="task"
+                                 className="editTask"
                                  value={editNote}
                                  onChange={handleEditNote}
                               ></textarea>
@@ -100,10 +101,10 @@ function App() {
                            </div>
                         )}
 
-                        {item.note}
+                        <span className="list">{item.note}</span>
                         <div className="actions">
                            <button
-                              className="editTask edit"
+                              className="edit"
                               value={item.id}
                               onClick={HandleEditTextarea}
                            >
