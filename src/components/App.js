@@ -103,13 +103,17 @@ function App() {
                         {item.note}
                         <div className="actions">
                            <button
-                              className="editTask"
+                              className="editTask edit"
                               value={item.id}
                               onClick={HandleEditTextarea}
                            >
                               Edit
                            </button>
-                           <button value={item.id} onClick={removeItem}>
+                           <button
+                              className="delete"
+                              value={item.id}
+                              onClick={removeItem}
+                           >
                               Delete
                            </button>
                         </div>
